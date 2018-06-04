@@ -43,6 +43,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Alumnos));
             this.alumnosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.alumnosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.relaccionesxsd = new GestionUniversisdad.Relaccionesxsd();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -55,22 +57,9 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.alumnosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.alumnosDataGridView = new System.Windows.Forms.DataGridView();
-            this.dNITextBox = new System.Windows.Forms.TextBox();
-            this.apellidosTextBox = new System.Windows.Forms.TextBox();
-            this.nombreTextBox = new System.Windows.Forms.TextBox();
-            this.fechaNacimientoTextBox = new System.Windows.Forms.TextBox();
-            this.domicilioTextBox = new System.Windows.Forms.TextBox();
-            this.codigoPostalTextBox = new System.Windows.Forms.TextBox();
-            this.telefonoTextBox = new System.Windows.Forms.TextBox();
-            this.e_mailTextBox = new System.Windows.Forms.TextBox();
-            this.fechaTituloTextBox = new System.Windows.Forms.TextBox();
-            this.nombreTituloTextBox = new System.Windows.Forms.TextBox();
-            this.centroAcademicoTextBox = new System.Windows.Forms.TextBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.alumnosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.relaccionesxsd = new GestionUniversisdad.Relaccionesxsd();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.alumnosDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,9 +71,21 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dNITextBox = new System.Windows.Forms.TextBox();
+            this.apellidosTextBox = new System.Windows.Forms.TextBox();
+            this.nombreTextBox = new System.Windows.Forms.TextBox();
+            this.fechaNacimientoTextBox = new System.Windows.Forms.TextBox();
+            this.domicilioTextBox = new System.Windows.Forms.TextBox();
+            this.codigoPostalTextBox = new System.Windows.Forms.TextBox();
+            this.telefonoTextBox = new System.Windows.Forms.TextBox();
+            this.e_mailTextBox = new System.Windows.Forms.TextBox();
+            this.fechaTituloTextBox = new System.Windows.Forms.TextBox();
+            this.nombreTituloTextBox = new System.Windows.Forms.TextBox();
+            this.centroAcademicoTextBox = new System.Windows.Forms.TextBox();
             this.alumnosTableAdapter = new GestionUniversisdad.RelaccionesxsdTableAdapters.AlumnosTableAdapter();
             this.tableAdapterManager = new GestionUniversisdad.RelaccionesxsdTableAdapters.TableAdapterManager();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             dNILabel = new System.Windows.Forms.Label();
             apellidosLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
@@ -98,9 +99,9 @@
             centroAcademicoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.alumnosBindingNavigator)).BeginInit();
             this.alumnosBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alumnosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.relaccionesxsd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alumnosDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dNILabel
@@ -233,9 +234,11 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.alumnosBindingNavigatorSaveItem,
+            this.toolStripLabel4,
             this.toolStripLabel1,
             this.toolStripLabel2,
-            this.toolStripLabel3});
+            this.toolStripLabel3,
+            this.toolStripLabel5});
             this.alumnosBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.alumnosBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.alumnosBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -256,6 +259,16 @@
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // alumnosBindingSource
+            // 
+            this.alumnosBindingSource.DataMember = "Alumnos";
+            this.alumnosBindingSource.DataSource = this.relaccionesxsd;
+            // 
+            // relaccionesxsd
+            // 
+            this.relaccionesxsd.DataSetName = "Relaccionesxsd";
+            this.relaccionesxsd.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -348,6 +361,19 @@
             this.toolStripLabel1.Text = "GUARDAR";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(70, 24);
+            this.toolStripLabel2.Text = "MODIFICAR";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(52, 24);
+            this.toolStripLabel3.Text = "BORRAR";
+            this.toolStripLabel3.Click += new System.EventHandler(this.toolStripLabel3_Click);
+            // 
             // alumnosDataGridView
             // 
             this.alumnosDataGridView.AutoGenerateColumns = false;
@@ -366,137 +392,11 @@
             this.dataGridViewTextBoxColumn11});
             this.alumnosDataGridView.DataSource = this.alumnosBindingSource;
             this.alumnosDataGridView.Location = new System.Drawing.Point(28, 294);
-            this.alumnosDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.alumnosDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.alumnosDataGridView.Name = "alumnosDataGridView";
             this.alumnosDataGridView.RowTemplate.Height = 24;
             this.alumnosDataGridView.Size = new System.Drawing.Size(859, 267);
             this.alumnosDataGridView.TabIndex = 1;
-            // 
-            // dNITextBox
-            // 
-            this.dNITextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "DNI", true));
-            this.dNITextBox.Location = new System.Drawing.Point(472, 27);
-            this.dNITextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dNITextBox.Name = "dNITextBox";
-            this.dNITextBox.Size = new System.Drawing.Size(76, 20);
-            this.dNITextBox.TabIndex = 3;
-            // 
-            // apellidosTextBox
-            // 
-            this.apellidosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "apellidos", true));
-            this.apellidosTextBox.Location = new System.Drawing.Point(472, 50);
-            this.apellidosTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.apellidosTextBox.Name = "apellidosTextBox";
-            this.apellidosTextBox.Size = new System.Drawing.Size(76, 20);
-            this.apellidosTextBox.TabIndex = 5;
-            // 
-            // nombreTextBox
-            // 
-            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(472, 72);
-            this.nombreTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(76, 20);
-            this.nombreTextBox.TabIndex = 7;
-            // 
-            // fechaNacimientoTextBox
-            // 
-            this.fechaNacimientoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "fechaNacimiento", true));
-            this.fechaNacimientoTextBox.Location = new System.Drawing.Point(472, 95);
-            this.fechaNacimientoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.fechaNacimientoTextBox.Name = "fechaNacimientoTextBox";
-            this.fechaNacimientoTextBox.Size = new System.Drawing.Size(76, 20);
-            this.fechaNacimientoTextBox.TabIndex = 9;
-            // 
-            // domicilioTextBox
-            // 
-            this.domicilioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "domicilio", true));
-            this.domicilioTextBox.Location = new System.Drawing.Point(472, 118);
-            this.domicilioTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.domicilioTextBox.Name = "domicilioTextBox";
-            this.domicilioTextBox.Size = new System.Drawing.Size(76, 20);
-            this.domicilioTextBox.TabIndex = 11;
-            // 
-            // codigoPostalTextBox
-            // 
-            this.codigoPostalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "codigoPostal", true));
-            this.codigoPostalTextBox.Location = new System.Drawing.Point(472, 141);
-            this.codigoPostalTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.codigoPostalTextBox.Name = "codigoPostalTextBox";
-            this.codigoPostalTextBox.Size = new System.Drawing.Size(76, 20);
-            this.codigoPostalTextBox.TabIndex = 13;
-            // 
-            // telefonoTextBox
-            // 
-            this.telefonoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "telefono", true));
-            this.telefonoTextBox.Location = new System.Drawing.Point(472, 163);
-            this.telefonoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.telefonoTextBox.Name = "telefonoTextBox";
-            this.telefonoTextBox.Size = new System.Drawing.Size(76, 20);
-            this.telefonoTextBox.TabIndex = 15;
-            // 
-            // e_mailTextBox
-            // 
-            this.e_mailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "e-mail", true));
-            this.e_mailTextBox.Location = new System.Drawing.Point(472, 186);
-            this.e_mailTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.e_mailTextBox.Name = "e_mailTextBox";
-            this.e_mailTextBox.Size = new System.Drawing.Size(76, 20);
-            this.e_mailTextBox.TabIndex = 17;
-            // 
-            // fechaTituloTextBox
-            // 
-            this.fechaTituloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "fechaTitulo", true));
-            this.fechaTituloTextBox.Location = new System.Drawing.Point(472, 209);
-            this.fechaTituloTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.fechaTituloTextBox.Name = "fechaTituloTextBox";
-            this.fechaTituloTextBox.Size = new System.Drawing.Size(76, 20);
-            this.fechaTituloTextBox.TabIndex = 19;
-            // 
-            // nombreTituloTextBox
-            // 
-            this.nombreTituloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "nombreTitulo", true));
-            this.nombreTituloTextBox.Location = new System.Drawing.Point(472, 232);
-            this.nombreTituloTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.nombreTituloTextBox.Name = "nombreTituloTextBox";
-            this.nombreTituloTextBox.Size = new System.Drawing.Size(76, 20);
-            this.nombreTituloTextBox.TabIndex = 21;
-            // 
-            // centroAcademicoTextBox
-            // 
-            this.centroAcademicoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "centroAcademico", true));
-            this.centroAcademicoTextBox.Location = new System.Drawing.Point(472, 254);
-            this.centroAcademicoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.centroAcademicoTextBox.Name = "centroAcademicoTextBox";
-            this.centroAcademicoTextBox.Size = new System.Drawing.Size(76, 20);
-            this.centroAcademicoTextBox.TabIndex = 23;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(860, 27);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(56, 19);
-            this.btnGuardar.TabIndex = 24;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(70, 24);
-            this.toolStripLabel2.Text = "MODIFICAR";
-            // 
-            // alumnosBindingSource
-            // 
-            this.alumnosBindingSource.DataMember = "Alumnos";
-            this.alumnosBindingSource.DataSource = this.relaccionesxsd;
-            // 
-            // relaccionesxsd
-            // 
-            this.relaccionesxsd.DataSetName = "Relaccionesxsd";
-            this.relaccionesxsd.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -564,6 +464,105 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "centroAcademico";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
+            // dNITextBox
+            // 
+            this.dNITextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "DNI", true));
+            this.dNITextBox.Location = new System.Drawing.Point(472, 27);
+            this.dNITextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.dNITextBox.Name = "dNITextBox";
+            this.dNITextBox.Size = new System.Drawing.Size(76, 20);
+            this.dNITextBox.TabIndex = 3;
+            // 
+            // apellidosTextBox
+            // 
+            this.apellidosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "apellidos", true));
+            this.apellidosTextBox.Location = new System.Drawing.Point(472, 50);
+            this.apellidosTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.apellidosTextBox.Name = "apellidosTextBox";
+            this.apellidosTextBox.Size = new System.Drawing.Size(76, 20);
+            this.apellidosTextBox.TabIndex = 5;
+            // 
+            // nombreTextBox
+            // 
+            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "nombre", true));
+            this.nombreTextBox.Location = new System.Drawing.Point(472, 72);
+            this.nombreTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.nombreTextBox.Name = "nombreTextBox";
+            this.nombreTextBox.Size = new System.Drawing.Size(76, 20);
+            this.nombreTextBox.TabIndex = 7;
+            // 
+            // fechaNacimientoTextBox
+            // 
+            this.fechaNacimientoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "fechaNacimiento", true));
+            this.fechaNacimientoTextBox.Location = new System.Drawing.Point(472, 95);
+            this.fechaNacimientoTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.fechaNacimientoTextBox.Name = "fechaNacimientoTextBox";
+            this.fechaNacimientoTextBox.Size = new System.Drawing.Size(76, 20);
+            this.fechaNacimientoTextBox.TabIndex = 9;
+            // 
+            // domicilioTextBox
+            // 
+            this.domicilioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "domicilio", true));
+            this.domicilioTextBox.Location = new System.Drawing.Point(472, 118);
+            this.domicilioTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.domicilioTextBox.Name = "domicilioTextBox";
+            this.domicilioTextBox.Size = new System.Drawing.Size(76, 20);
+            this.domicilioTextBox.TabIndex = 11;
+            // 
+            // codigoPostalTextBox
+            // 
+            this.codigoPostalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "codigoPostal", true));
+            this.codigoPostalTextBox.Location = new System.Drawing.Point(472, 141);
+            this.codigoPostalTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.codigoPostalTextBox.Name = "codigoPostalTextBox";
+            this.codigoPostalTextBox.Size = new System.Drawing.Size(76, 20);
+            this.codigoPostalTextBox.TabIndex = 13;
+            // 
+            // telefonoTextBox
+            // 
+            this.telefonoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "telefono", true));
+            this.telefonoTextBox.Location = new System.Drawing.Point(472, 163);
+            this.telefonoTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.telefonoTextBox.Name = "telefonoTextBox";
+            this.telefonoTextBox.Size = new System.Drawing.Size(76, 20);
+            this.telefonoTextBox.TabIndex = 15;
+            // 
+            // e_mailTextBox
+            // 
+            this.e_mailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "e-mail", true));
+            this.e_mailTextBox.Location = new System.Drawing.Point(472, 186);
+            this.e_mailTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.e_mailTextBox.Name = "e_mailTextBox";
+            this.e_mailTextBox.Size = new System.Drawing.Size(76, 20);
+            this.e_mailTextBox.TabIndex = 17;
+            // 
+            // fechaTituloTextBox
+            // 
+            this.fechaTituloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "fechaTitulo", true));
+            this.fechaTituloTextBox.Location = new System.Drawing.Point(472, 209);
+            this.fechaTituloTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.fechaTituloTextBox.Name = "fechaTituloTextBox";
+            this.fechaTituloTextBox.Size = new System.Drawing.Size(76, 20);
+            this.fechaTituloTextBox.TabIndex = 19;
+            // 
+            // nombreTituloTextBox
+            // 
+            this.nombreTituloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "nombreTitulo", true));
+            this.nombreTituloTextBox.Location = new System.Drawing.Point(472, 232);
+            this.nombreTituloTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.nombreTituloTextBox.Name = "nombreTituloTextBox";
+            this.nombreTituloTextBox.Size = new System.Drawing.Size(76, 20);
+            this.nombreTituloTextBox.TabIndex = 21;
+            // 
+            // centroAcademicoTextBox
+            // 
+            this.centroAcademicoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "centroAcademico", true));
+            this.centroAcademicoTextBox.Location = new System.Drawing.Point(472, 254);
+            this.centroAcademicoTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.centroAcademicoTextBox.Name = "centroAcademicoTextBox";
+            this.centroAcademicoTextBox.Size = new System.Drawing.Size(76, 20);
+            this.centroAcademicoTextBox.TabIndex = 23;
+            // 
             // alumnosTableAdapter
             // 
             this.alumnosTableAdapter.ClearBeforeFill = true;
@@ -580,19 +579,25 @@
             this.tableAdapterManager.ProfesoresTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = GestionUniversisdad.RelaccionesxsdTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // toolStripLabel3
+            // toolStripLabel4
             // 
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(52, 24);
-            this.toolStripLabel3.Text = "BORRAR";
-            this.toolStripLabel3.Click += new System.EventHandler(this.toolStripLabel3_Click);
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(46, 24);
+            this.toolStripLabel4.Text = "NUEVO";
+            // 
+            // toolStripLabel5
+            // 
+            this.toolStripLabel5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel5.Name = "toolStripLabel5";
+            this.toolStripLabel5.Size = new System.Drawing.Size(52, 24);
+            this.toolStripLabel5.Text = "LIMPIAR";
+            this.toolStripLabel5.Click += new System.EventHandler(this.toolStripLabel5_Click);
             // 
             // Form_Alumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(955, 590);
-            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(dNILabel);
             this.Controls.Add(this.dNITextBox);
             this.Controls.Add(apellidosLabel);
@@ -617,16 +622,16 @@
             this.Controls.Add(this.centroAcademicoTextBox);
             this.Controls.Add(this.alumnosDataGridView);
             this.Controls.Add(this.alumnosBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_Alumnos";
             this.Text = "Form_Alumnos";
             this.Load += new System.EventHandler(this.Form_Alumnos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.alumnosBindingNavigator)).EndInit();
             this.alumnosBindingNavigator.ResumeLayout(false);
             this.alumnosBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alumnosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.relaccionesxsd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alumnosDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -674,9 +679,10 @@
         private System.Windows.Forms.TextBox fechaTituloTextBox;
         private System.Windows.Forms.TextBox nombreTituloTextBox;
         private System.Windows.Forms.TextBox centroAcademicoTextBox;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel5;
     }
 }

@@ -37,12 +37,6 @@ namespace GestionUniversisdad
         {
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            RelaccionesxsdTableAdapters.AlumnosTableAdapter alumnos = new RelaccionesxsdTableAdapters.AlumnosTableAdapter();
-            alumnos.InsertarAlumno(dNITextBox.Text, apellidosTextBox.Text, nombreTextBox.Text, fechaNacimientoTextBox.Text, domicilioTextBox.Text, codigoPostalTextBox.Text, telefonoTextBox.Text, e_mailTextBox.Text, fechaTituloTextBox.Text, nombreTituloTextBox.Text, centroAcademicoTextBox.Text);
-        }
-
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             RelaccionesxsdTableAdapters.AlumnosTableAdapter alumnos = new RelaccionesxsdTableAdapters.AlumnosTableAdapter();
@@ -65,6 +59,9 @@ namespace GestionUniversisdad
                 fechaTituloTextBox.Clear();
                 nombreTituloTextBox.Clear();
                 centroAcademicoTextBox.Clear();
+                nombreTextBox.Clear();
+                fechaNacimientoTextBox.Clear();
+                this.tableAdapterManager.UpdateAll(this.relaccionesxsd);
             }
         }
 
@@ -90,7 +87,34 @@ namespace GestionUniversisdad
                 fechaTituloTextBox.Clear();
                 nombreTituloTextBox.Clear();
                 centroAcademicoTextBox.Clear();
+                nombreTextBox.Clear();
+                fechaNacimientoTextBox.Clear();
+                actualizar();
             }
+        }
+
+        private void toolStripLabel5_Click(object sender, EventArgs e)
+        {
+            dNITextBox.Clear();
+            apellidosTextBox.Clear();
+            nombreTituloTextBox.Clear();
+            fechaTituloTextBox.Clear();
+            domicilioTextBox.Clear();
+            codigoPostalTextBox.Clear();
+            telefonoTextBox.Clear();
+            e_mailTextBox.Clear();
+            fechaTituloTextBox.Clear();
+            nombreTituloTextBox.Clear();
+            centroAcademicoTextBox.Clear();
+            nombreTextBox.Clear();
+            fechaNacimientoTextBox.Clear();
+        }
+
+        public void actualizar()
+        {
+            this.Validate();
+            this.alumnosBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.relaccionesxsd);
         }
     }
 }
