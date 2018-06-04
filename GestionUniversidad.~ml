@@ -375,9 +375,9 @@
 <XPD:REF name="Head">u21OvoGPE0eySMHVWz8wUwAA</XPD:REF>
 <XPD:REF name="Tail">oKKUUuSBlkSDGAEN1GHRdQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="uVN8Jvvrv0iJSXm3NX6uIQAA">
-<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">15</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">TIENEN</XPD:ATTR>
 <XPD:REF name="Model">H2NkdZxUe066Va8uqT1txAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="prbDgFuaBE+AHIar1GTxzAAA">
@@ -1595,6 +1595,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[25]" type="UMLAssociation" guid="H2NkdZxUe066Va8uqT1txAAA">
+<XPD:ATTR name="Name" type="string">TIENEN</XPD:ATTR>
 <XPD:REF name="Namespace">Ysv49bHDL0eZjfw8Rfe2XQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">Pg9tMbvHy0iQFKqJE1BKGAAA</XPD:REF>
