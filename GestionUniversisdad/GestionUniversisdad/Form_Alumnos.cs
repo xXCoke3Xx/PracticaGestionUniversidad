@@ -66,5 +66,11 @@ namespace GestionUniversisdad
                 centroAcademicoTextBox.Clear();
             }
         }
+
+        private void toolStripLabel3_Click(object sender, EventArgs e)
+        {
+            RelaccionesxsdTableAdapters.AlumnosTableAdapter alumnos = new RelaccionesxsdTableAdapters.AlumnosTableAdapter();
+            alumnos.BorrarAlumno(dNITextBox.Text);
+        }
     }
 }

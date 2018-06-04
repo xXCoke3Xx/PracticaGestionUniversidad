@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Alumnos));
             System.Windows.Forms.Label dNILabel;
             System.Windows.Forms.Label apellidosLabel;
             System.Windows.Forms.Label nombreLabel;
@@ -41,6 +40,7 @@
             System.Windows.Forms.Label fechaTituloLabel;
             System.Windows.Forms.Label nombreTituloLabel;
             System.Windows.Forms.Label centroAcademicoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Alumnos));
             this.alumnosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -54,6 +54,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.alumnosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.alumnosDataGridView = new System.Windows.Forms.DataGridView();
             this.dNITextBox = new System.Windows.Forms.TextBox();
             this.apellidosTextBox = new System.Windows.Forms.TextBox();
@@ -66,6 +67,8 @@
             this.fechaTituloTextBox = new System.Windows.Forms.TextBox();
             this.nombreTituloTextBox = new System.Windows.Forms.TextBox();
             this.centroAcademicoTextBox = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.alumnosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.relaccionesxsd = new GestionUniversisdad.Relaccionesxsd();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,8 +84,7 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alumnosTableAdapter = new GestionUniversisdad.RelaccionesxsdTableAdapters.AlumnosTableAdapter();
             this.tableAdapterManager = new GestionUniversisdad.RelaccionesxsdTableAdapters.TableAdapterManager();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             dNILabel = new System.Windows.Forms.Label();
             apellidosLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
@@ -100,6 +102,116 @@
             ((System.ComponentModel.ISupportInitialize)(this.alumnosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.relaccionesxsd)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dNILabel
+            // 
+            dNILabel.AutoSize = true;
+            dNILabel.Location = new System.Drawing.Point(374, 29);
+            dNILabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            dNILabel.Name = "dNILabel";
+            dNILabel.Size = new System.Drawing.Size(29, 13);
+            dNILabel.TabIndex = 2;
+            dNILabel.Text = "DNI:";
+            // 
+            // apellidosLabel
+            // 
+            apellidosLabel.AutoSize = true;
+            apellidosLabel.Location = new System.Drawing.Point(374, 52);
+            apellidosLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            apellidosLabel.Name = "apellidosLabel";
+            apellidosLabel.Size = new System.Drawing.Size(51, 13);
+            apellidosLabel.TabIndex = 4;
+            apellidosLabel.Text = "apellidos:";
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Location = new System.Drawing.Point(374, 75);
+            nombreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(45, 13);
+            nombreLabel.TabIndex = 6;
+            nombreLabel.Text = "nombre:";
+            // 
+            // fechaNacimientoLabel
+            // 
+            fechaNacimientoLabel.AutoSize = true;
+            fechaNacimientoLabel.Location = new System.Drawing.Point(374, 98);
+            fechaNacimientoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            fechaNacimientoLabel.Name = "fechaNacimientoLabel";
+            fechaNacimientoLabel.Size = new System.Drawing.Size(93, 13);
+            fechaNacimientoLabel.TabIndex = 8;
+            fechaNacimientoLabel.Text = "fecha Nacimiento:";
+            // 
+            // domicilioLabel
+            // 
+            domicilioLabel.AutoSize = true;
+            domicilioLabel.Location = new System.Drawing.Point(374, 120);
+            domicilioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            domicilioLabel.Name = "domicilioLabel";
+            domicilioLabel.Size = new System.Drawing.Size(50, 13);
+            domicilioLabel.TabIndex = 10;
+            domicilioLabel.Text = "domicilio:";
+            // 
+            // codigoPostalLabel
+            // 
+            codigoPostalLabel.AutoSize = true;
+            codigoPostalLabel.Location = new System.Drawing.Point(374, 143);
+            codigoPostalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            codigoPostalLabel.Name = "codigoPostalLabel";
+            codigoPostalLabel.Size = new System.Drawing.Size(74, 13);
+            codigoPostalLabel.TabIndex = 12;
+            codigoPostalLabel.Text = "codigo Postal:";
+            // 
+            // telefonoLabel
+            // 
+            telefonoLabel.AutoSize = true;
+            telefonoLabel.Location = new System.Drawing.Point(374, 166);
+            telefonoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            telefonoLabel.Name = "telefonoLabel";
+            telefonoLabel.Size = new System.Drawing.Size(48, 13);
+            telefonoLabel.TabIndex = 14;
+            telefonoLabel.Text = "telefono:";
+            // 
+            // e_mailLabel
+            // 
+            e_mailLabel.AutoSize = true;
+            e_mailLabel.Location = new System.Drawing.Point(374, 188);
+            e_mailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            e_mailLabel.Name = "e_mailLabel";
+            e_mailLabel.Size = new System.Drawing.Size(37, 13);
+            e_mailLabel.TabIndex = 16;
+            e_mailLabel.Text = "e-mail:";
+            // 
+            // fechaTituloLabel
+            // 
+            fechaTituloLabel.AutoSize = true;
+            fechaTituloLabel.Location = new System.Drawing.Point(374, 211);
+            fechaTituloLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            fechaTituloLabel.Name = "fechaTituloLabel";
+            fechaTituloLabel.Size = new System.Drawing.Size(66, 13);
+            fechaTituloLabel.TabIndex = 18;
+            fechaTituloLabel.Text = "fecha Titulo:";
+            // 
+            // nombreTituloLabel
+            // 
+            nombreTituloLabel.AutoSize = true;
+            nombreTituloLabel.Location = new System.Drawing.Point(374, 234);
+            nombreTituloLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            nombreTituloLabel.Name = "nombreTituloLabel";
+            nombreTituloLabel.Size = new System.Drawing.Size(74, 13);
+            nombreTituloLabel.TabIndex = 20;
+            nombreTituloLabel.Text = "nombre Titulo:";
+            // 
+            // centroAcademicoLabel
+            // 
+            centroAcademicoLabel.AutoSize = true;
+            centroAcademicoLabel.Location = new System.Drawing.Point(374, 257);
+            centroAcademicoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            centroAcademicoLabel.Name = "centroAcademicoLabel";
+            centroAcademicoLabel.Size = new System.Drawing.Size(96, 13);
+            centroAcademicoLabel.TabIndex = 22;
+            centroAcademicoLabel.Text = "centro Academico:";
             // 
             // alumnosBindingNavigator
             // 
@@ -121,7 +233,9 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.alumnosBindingNavigatorSaveItem,
-            this.toolStripLabel1});
+            this.toolStripLabel1,
+            this.toolStripLabel2,
+            this.toolStripLabel3});
             this.alumnosBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.alumnosBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.alumnosBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -129,7 +243,7 @@
             this.alumnosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.alumnosBindingNavigator.Name = "alumnosBindingNavigator";
             this.alumnosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.alumnosBindingNavigator.Size = new System.Drawing.Size(1273, 27);
+            this.alumnosBindingNavigator.Size = new System.Drawing.Size(955, 27);
             this.alumnosBindingNavigator.TabIndex = 0;
             this.alumnosBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -146,8 +260,8 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 24);
-            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
             // bindingNavigatorDeleteItem
@@ -187,7 +301,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
@@ -227,6 +341,13 @@
             this.alumnosBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.alumnosBindingNavigatorSaveItem.Text = "Guardar datos";
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(61, 24);
+            this.toolStripLabel1.Text = "GUARDAR";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
+            // 
             // alumnosDataGridView
             // 
             this.alumnosDataGridView.AutoGenerateColumns = false;
@@ -244,198 +365,128 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
             this.alumnosDataGridView.DataSource = this.alumnosBindingSource;
-            this.alumnosDataGridView.Location = new System.Drawing.Point(37, 362);
+            this.alumnosDataGridView.Location = new System.Drawing.Point(28, 294);
+            this.alumnosDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.alumnosDataGridView.Name = "alumnosDataGridView";
             this.alumnosDataGridView.RowTemplate.Height = 24;
-            this.alumnosDataGridView.Size = new System.Drawing.Size(1145, 329);
+            this.alumnosDataGridView.Size = new System.Drawing.Size(859, 267);
             this.alumnosDataGridView.TabIndex = 1;
-            // 
-            // dNILabel
-            // 
-            dNILabel.AutoSize = true;
-            dNILabel.Location = new System.Drawing.Point(499, 36);
-            dNILabel.Name = "dNILabel";
-            dNILabel.Size = new System.Drawing.Size(35, 17);
-            dNILabel.TabIndex = 2;
-            dNILabel.Text = "DNI:";
             // 
             // dNITextBox
             // 
             this.dNITextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "DNI", true));
-            this.dNITextBox.Location = new System.Drawing.Point(630, 33);
+            this.dNITextBox.Location = new System.Drawing.Point(472, 27);
+            this.dNITextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dNITextBox.Name = "dNITextBox";
-            this.dNITextBox.Size = new System.Drawing.Size(100, 22);
+            this.dNITextBox.Size = new System.Drawing.Size(76, 20);
             this.dNITextBox.TabIndex = 3;
-            // 
-            // apellidosLabel
-            // 
-            apellidosLabel.AutoSize = true;
-            apellidosLabel.Location = new System.Drawing.Point(499, 64);
-            apellidosLabel.Name = "apellidosLabel";
-            apellidosLabel.Size = new System.Drawing.Size(68, 17);
-            apellidosLabel.TabIndex = 4;
-            apellidosLabel.Text = "apellidos:";
             // 
             // apellidosTextBox
             // 
             this.apellidosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "apellidos", true));
-            this.apellidosTextBox.Location = new System.Drawing.Point(630, 61);
+            this.apellidosTextBox.Location = new System.Drawing.Point(472, 50);
+            this.apellidosTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.apellidosTextBox.Name = "apellidosTextBox";
-            this.apellidosTextBox.Size = new System.Drawing.Size(100, 22);
+            this.apellidosTextBox.Size = new System.Drawing.Size(76, 20);
             this.apellidosTextBox.TabIndex = 5;
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(499, 92);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(60, 17);
-            nombreLabel.TabIndex = 6;
-            nombreLabel.Text = "nombre:";
             // 
             // nombreTextBox
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(630, 89);
+            this.nombreTextBox.Location = new System.Drawing.Point(472, 72);
+            this.nombreTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(100, 22);
+            this.nombreTextBox.Size = new System.Drawing.Size(76, 20);
             this.nombreTextBox.TabIndex = 7;
-            // 
-            // fechaNacimientoLabel
-            // 
-            fechaNacimientoLabel.AutoSize = true;
-            fechaNacimientoLabel.Location = new System.Drawing.Point(499, 120);
-            fechaNacimientoLabel.Name = "fechaNacimientoLabel";
-            fechaNacimientoLabel.Size = new System.Drawing.Size(121, 17);
-            fechaNacimientoLabel.TabIndex = 8;
-            fechaNacimientoLabel.Text = "fecha Nacimiento:";
             // 
             // fechaNacimientoTextBox
             // 
             this.fechaNacimientoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "fechaNacimiento", true));
-            this.fechaNacimientoTextBox.Location = new System.Drawing.Point(630, 117);
+            this.fechaNacimientoTextBox.Location = new System.Drawing.Point(472, 95);
+            this.fechaNacimientoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.fechaNacimientoTextBox.Name = "fechaNacimientoTextBox";
-            this.fechaNacimientoTextBox.Size = new System.Drawing.Size(100, 22);
+            this.fechaNacimientoTextBox.Size = new System.Drawing.Size(76, 20);
             this.fechaNacimientoTextBox.TabIndex = 9;
-            // 
-            // domicilioLabel
-            // 
-            domicilioLabel.AutoSize = true;
-            domicilioLabel.Location = new System.Drawing.Point(499, 148);
-            domicilioLabel.Name = "domicilioLabel";
-            domicilioLabel.Size = new System.Drawing.Size(66, 17);
-            domicilioLabel.TabIndex = 10;
-            domicilioLabel.Text = "domicilio:";
             // 
             // domicilioTextBox
             // 
             this.domicilioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "domicilio", true));
-            this.domicilioTextBox.Location = new System.Drawing.Point(630, 145);
+            this.domicilioTextBox.Location = new System.Drawing.Point(472, 118);
+            this.domicilioTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.domicilioTextBox.Name = "domicilioTextBox";
-            this.domicilioTextBox.Size = new System.Drawing.Size(100, 22);
+            this.domicilioTextBox.Size = new System.Drawing.Size(76, 20);
             this.domicilioTextBox.TabIndex = 11;
-            // 
-            // codigoPostalLabel
-            // 
-            codigoPostalLabel.AutoSize = true;
-            codigoPostalLabel.Location = new System.Drawing.Point(499, 176);
-            codigoPostalLabel.Name = "codigoPostalLabel";
-            codigoPostalLabel.Size = new System.Drawing.Size(97, 17);
-            codigoPostalLabel.TabIndex = 12;
-            codigoPostalLabel.Text = "codigo Postal:";
             // 
             // codigoPostalTextBox
             // 
             this.codigoPostalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "codigoPostal", true));
-            this.codigoPostalTextBox.Location = new System.Drawing.Point(630, 173);
+            this.codigoPostalTextBox.Location = new System.Drawing.Point(472, 141);
+            this.codigoPostalTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.codigoPostalTextBox.Name = "codigoPostalTextBox";
-            this.codigoPostalTextBox.Size = new System.Drawing.Size(100, 22);
+            this.codigoPostalTextBox.Size = new System.Drawing.Size(76, 20);
             this.codigoPostalTextBox.TabIndex = 13;
-            // 
-            // telefonoLabel
-            // 
-            telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(499, 204);
-            telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(63, 17);
-            telefonoLabel.TabIndex = 14;
-            telefonoLabel.Text = "telefono:";
             // 
             // telefonoTextBox
             // 
             this.telefonoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "telefono", true));
-            this.telefonoTextBox.Location = new System.Drawing.Point(630, 201);
+            this.telefonoTextBox.Location = new System.Drawing.Point(472, 163);
+            this.telefonoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.telefonoTextBox.Name = "telefonoTextBox";
-            this.telefonoTextBox.Size = new System.Drawing.Size(100, 22);
+            this.telefonoTextBox.Size = new System.Drawing.Size(76, 20);
             this.telefonoTextBox.TabIndex = 15;
-            // 
-            // e_mailLabel
-            // 
-            e_mailLabel.AutoSize = true;
-            e_mailLabel.Location = new System.Drawing.Point(499, 232);
-            e_mailLabel.Name = "e_mailLabel";
-            e_mailLabel.Size = new System.Drawing.Size(50, 17);
-            e_mailLabel.TabIndex = 16;
-            e_mailLabel.Text = "e-mail:";
             // 
             // e_mailTextBox
             // 
             this.e_mailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "e-mail", true));
-            this.e_mailTextBox.Location = new System.Drawing.Point(630, 229);
+            this.e_mailTextBox.Location = new System.Drawing.Point(472, 186);
+            this.e_mailTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.e_mailTextBox.Name = "e_mailTextBox";
-            this.e_mailTextBox.Size = new System.Drawing.Size(100, 22);
+            this.e_mailTextBox.Size = new System.Drawing.Size(76, 20);
             this.e_mailTextBox.TabIndex = 17;
-            // 
-            // fechaTituloLabel
-            // 
-            fechaTituloLabel.AutoSize = true;
-            fechaTituloLabel.Location = new System.Drawing.Point(499, 260);
-            fechaTituloLabel.Name = "fechaTituloLabel";
-            fechaTituloLabel.Size = new System.Drawing.Size(86, 17);
-            fechaTituloLabel.TabIndex = 18;
-            fechaTituloLabel.Text = "fecha Titulo:";
             // 
             // fechaTituloTextBox
             // 
             this.fechaTituloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "fechaTitulo", true));
-            this.fechaTituloTextBox.Location = new System.Drawing.Point(630, 257);
+            this.fechaTituloTextBox.Location = new System.Drawing.Point(472, 209);
+            this.fechaTituloTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.fechaTituloTextBox.Name = "fechaTituloTextBox";
-            this.fechaTituloTextBox.Size = new System.Drawing.Size(100, 22);
+            this.fechaTituloTextBox.Size = new System.Drawing.Size(76, 20);
             this.fechaTituloTextBox.TabIndex = 19;
-            // 
-            // nombreTituloLabel
-            // 
-            nombreTituloLabel.AutoSize = true;
-            nombreTituloLabel.Location = new System.Drawing.Point(499, 288);
-            nombreTituloLabel.Name = "nombreTituloLabel";
-            nombreTituloLabel.Size = new System.Drawing.Size(99, 17);
-            nombreTituloLabel.TabIndex = 20;
-            nombreTituloLabel.Text = "nombre Titulo:";
             // 
             // nombreTituloTextBox
             // 
             this.nombreTituloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "nombreTitulo", true));
-            this.nombreTituloTextBox.Location = new System.Drawing.Point(630, 285);
+            this.nombreTituloTextBox.Location = new System.Drawing.Point(472, 232);
+            this.nombreTituloTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nombreTituloTextBox.Name = "nombreTituloTextBox";
-            this.nombreTituloTextBox.Size = new System.Drawing.Size(100, 22);
+            this.nombreTituloTextBox.Size = new System.Drawing.Size(76, 20);
             this.nombreTituloTextBox.TabIndex = 21;
-            // 
-            // centroAcademicoLabel
-            // 
-            centroAcademicoLabel.AutoSize = true;
-            centroAcademicoLabel.Location = new System.Drawing.Point(499, 316);
-            centroAcademicoLabel.Name = "centroAcademicoLabel";
-            centroAcademicoLabel.Size = new System.Drawing.Size(125, 17);
-            centroAcademicoLabel.TabIndex = 22;
-            centroAcademicoLabel.Text = "centro Academico:";
             // 
             // centroAcademicoTextBox
             // 
             this.centroAcademicoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "centroAcademico", true));
-            this.centroAcademicoTextBox.Location = new System.Drawing.Point(630, 313);
+            this.centroAcademicoTextBox.Location = new System.Drawing.Point(472, 254);
+            this.centroAcademicoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.centroAcademicoTextBox.Name = "centroAcademicoTextBox";
-            this.centroAcademicoTextBox.Size = new System.Drawing.Size(100, 22);
+            this.centroAcademicoTextBox.Size = new System.Drawing.Size(76, 20);
             this.centroAcademicoTextBox.TabIndex = 23;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(860, 27);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(56, 19);
+            this.btnGuardar.TabIndex = 24;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(70, 24);
+            this.toolStripLabel2.Text = "MODIFICAR";
             // 
             // alumnosBindingSource
             // 
@@ -529,28 +580,18 @@
             this.tableAdapterManager.ProfesoresTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = GestionUniversisdad.RelaccionesxsdTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // btnGuardar
+            // toolStripLabel3
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(1146, 33);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 24;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(78, 24);
-            this.toolStripLabel1.Text = "GUARDAR";
-            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(52, 24);
+            this.toolStripLabel3.Text = "BORRAR";
+            this.toolStripLabel3.Click += new System.EventHandler(this.toolStripLabel3_Click);
             // 
             // Form_Alumnos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1273, 726);
+            this.ClientSize = new System.Drawing.Size(955, 590);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(dNILabel);
             this.Controls.Add(this.dNITextBox);
@@ -576,6 +617,7 @@
             this.Controls.Add(this.centroAcademicoTextBox);
             this.Controls.Add(this.alumnosDataGridView);
             this.Controls.Add(this.alumnosBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form_Alumnos";
             this.Text = "Form_Alumnos";
             this.Load += new System.EventHandler(this.Form_Alumnos_Load);
@@ -634,5 +676,7 @@
         private System.Windows.Forms.TextBox centroAcademicoTextBox;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
     }
 }
