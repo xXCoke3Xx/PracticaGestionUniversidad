@@ -110,6 +110,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relaccionesxsd.cs">
+      <DependentUpon>Relaccionesxsd.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Relaccionesxsd.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

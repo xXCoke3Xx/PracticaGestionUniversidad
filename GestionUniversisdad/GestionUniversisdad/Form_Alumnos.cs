@@ -31,15 +31,33 @@ namespace GestionUniversisdad
             this.Validate();
             this.alumnosBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.relaccionesxsd);
-
         }
 
-        private void alumnosBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.alumnosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.relaccionesxsd);
+        }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            RelaccionesxsdTableAdapters.AlumnosTableAdapter alumnos = new RelaccionesxsdTableAdapters.AlumnosTableAdapter();
+            alumnos.InsertarAlumno(dNITextBox.Text, apellidosTextBox.Text, nombreTextBox.Text, fechaNacimientoTextBox.Text, domicilioTextBox.Text, codigoPostalTextBox.Text, telefonoTextBox.Text, e_mailTextBox.Text, fechaTituloTextBox.Text, nombreTituloTextBox.Text, centroAcademicoTextBox.Text);
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            RelaccionesxsdTableAdapters.AlumnosTableAdapter alumnos = new RelaccionesxsdTableAdapters.AlumnosTableAdapter();
+            alumnos.InsertarAlumno(dNITextBox.Text, apellidosTextBox.Text, nombreTextBox.Text, fechaNacimientoTextBox.Text, domicilioTextBox.Text, codigoPostalTextBox.Text, telefonoTextBox.Text, e_mailTextBox.Text, fechaTituloTextBox.Text, nombreTituloTextBox.Text, centroAcademicoTextBox.Text);
+            dNITextBox.Clear();
+            apellidosTextBox.Clear();
+            nombreTituloTextBox.Clear();
+            fechaTituloTextBox.Clear();
+            domicilioTextBox.Clear();
+            codigoPostalTextBox.Clear();
+            telefonoTextBox.Clear();
+            e_mailTextBox.Clear();
+            fechaTituloTextBox.Clear();
+            nombreTituloTextBox.Clear();
+            centroAcademicoTextBox.Clear();
         }
     }
 }
