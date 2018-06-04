@@ -46,18 +46,25 @@ namespace GestionUniversisdad
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             RelaccionesxsdTableAdapters.AlumnosTableAdapter alumnos = new RelaccionesxsdTableAdapters.AlumnosTableAdapter();
-            alumnos.InsertarAlumno(dNITextBox.Text, apellidosTextBox.Text, nombreTextBox.Text, fechaNacimientoTextBox.Text, domicilioTextBox.Text, codigoPostalTextBox.Text, telefonoTextBox.Text, e_mailTextBox.Text, fechaTituloTextBox.Text, nombreTituloTextBox.Text, centroAcademicoTextBox.Text);
-            dNITextBox.Clear();
-            apellidosTextBox.Clear();
-            nombreTituloTextBox.Clear();
-            fechaTituloTextBox.Clear();
-            domicilioTextBox.Clear();
-            codigoPostalTextBox.Clear();
-            telefonoTextBox.Clear();
-            e_mailTextBox.Clear();
-            fechaTituloTextBox.Clear();
-            nombreTituloTextBox.Clear();
-            centroAcademicoTextBox.Clear();
+            if (string.IsNullOrEmpty(dNITextBox.Text)||string.IsNullOrWhiteSpace(dNITextBox.Text))
+            {
+                MessageBox.Show("No se permite un DNI vacio.", "ERROR", MessageBoxButtons.OK);
+            }
+            else
+            {
+                alumnos.InsertarAlumno(dNITextBox.Text, apellidosTextBox.Text, nombreTextBox.Text, fechaNacimientoTextBox.Text, domicilioTextBox.Text, codigoPostalTextBox.Text, telefonoTextBox.Text, e_mailTextBox.Text, fechaTituloTextBox.Text, nombreTituloTextBox.Text, centroAcademicoTextBox.Text);
+                dNITextBox.Clear();
+                apellidosTextBox.Clear();
+                nombreTituloTextBox.Clear();
+                fechaTituloTextBox.Clear();
+                domicilioTextBox.Clear();
+                codigoPostalTextBox.Clear();
+                telefonoTextBox.Clear();
+                e_mailTextBox.Clear();
+                fechaTituloTextBox.Clear();
+                nombreTituloTextBox.Clear();
+                centroAcademicoTextBox.Clear();
+            }
         }
     }
 }

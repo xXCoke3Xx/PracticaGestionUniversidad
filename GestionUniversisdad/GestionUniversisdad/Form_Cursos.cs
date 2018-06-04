@@ -31,5 +31,25 @@ namespace GestionUniversisdad
             this.cursosTableAdapter.Fill(this.relaccionesxsd.Cursos);
 
         }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            RelaccionesxsdTableAdapters.CursosTableAdapter cursos = new RelaccionesxsdTableAdapters.CursosTableAdapter();
+            if (string.IsNullOrEmpty(idCursoTextBox.Text) || string.IsNullOrWhiteSpace(idCursoTextBox.Text))
+            {
+                MessageBox.Show("No se permite un ID curso vacio.", "ERROR", MessageBoxButtons.OK);
+            }
+            else
+            {
+                cursos.agregarCurso(idCursoTextBox.Text, escuelaTextBox.Text, nombreCursoTextBox.Text, fechaComienzoTextBox.Text, fechaTerminacionTextBox.Text, Convert.ToInt32(numHorasTextBox.Text), calendarioTextBox.Text);
+                idCursoTextBox.Clear();
+                escuelaTextBox.Clear();
+                nombreCursoTextBox.Clear();
+                fechaComienzoTextBox.Clear();
+                fechaTerminacionTextBox.Clear();
+                numHorasTextBox.Clear();
+                calendarioTextBox.Clear();
+            }
+        }
     }
 }
