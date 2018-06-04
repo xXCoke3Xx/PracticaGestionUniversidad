@@ -48,11 +48,12 @@ namespace GestionUniversisdad
             RelaccionesxsdTableAdapters.AlumnosTableAdapter alumnos = new RelaccionesxsdTableAdapters.AlumnosTableAdapter();
             if (string.IsNullOrEmpty(dNITextBox.Text)||string.IsNullOrWhiteSpace(dNITextBox.Text))
             {
-                MessageBox.Show("No se permite un DNI vacio.", "ERROR", MessageBoxButtons.OK);
+                MessageBox.Show("No se permite guardar con un DNI vacio.", "ERROR", MessageBoxButtons.OK);
             }
             else
             {
                 alumnos.InsertarAlumno(dNITextBox.Text, apellidosTextBox.Text, nombreTextBox.Text, fechaNacimientoTextBox.Text, domicilioTextBox.Text, codigoPostalTextBox.Text, telefonoTextBox.Text, e_mailTextBox.Text, fechaTituloTextBox.Text, nombreTituloTextBox.Text, centroAcademicoTextBox.Text);
+                MessageBox.Show("Alumno insertado con exito.", "CORRECTO", MessageBoxButtons.OK);
                 dNITextBox.Clear();
                 apellidosTextBox.Clear();
                 nombreTituloTextBox.Clear();
@@ -70,7 +71,26 @@ namespace GestionUniversisdad
         private void toolStripLabel3_Click(object sender, EventArgs e)
         {
             RelaccionesxsdTableAdapters.AlumnosTableAdapter alumnos = new RelaccionesxsdTableAdapters.AlumnosTableAdapter();
-            alumnos.BorrarAlumno(dNITextBox.Text);
+            if (string.IsNullOrEmpty(dNITextBox.Text) || string.IsNullOrWhiteSpace(dNITextBox.Text))
+            {
+                MessageBox.Show("No se permite borrar con un DNI vacio.", "ERROR", MessageBoxButtons.OK);
+            }
+            else
+            {
+                alumnos.BorrarAlumno(dNITextBox.Text);
+                MessageBox.Show("Alumno borrado correctamente.", "CORRECTO", MessageBoxButtons.OK);
+                dNITextBox.Clear();
+                apellidosTextBox.Clear();
+                nombreTituloTextBox.Clear();
+                fechaTituloTextBox.Clear();
+                domicilioTextBox.Clear();
+                codigoPostalTextBox.Clear();
+                telefonoTextBox.Clear();
+                e_mailTextBox.Clear();
+                fechaTituloTextBox.Clear();
+                nombreTituloTextBox.Clear();
+                centroAcademicoTextBox.Clear();
+            }
         }
     }
 }
