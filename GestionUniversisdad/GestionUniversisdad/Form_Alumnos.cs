@@ -28,13 +28,40 @@ namespace GestionUniversisdad
 
         private void alumnosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
+            /*this.Validate();
             this.alumnosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.relaccionesxsd);
+            this.tableAdapterManager.UpdateAll(this.relaccionesxsd);*/
+            RelaccionesxsdTableAdapters.AlumnosTableAdapter alumnos = new RelaccionesxsdTableAdapters.AlumnosTableAdapter();
+            if (string.IsNullOrEmpty(dNITextBox.Text) || string.IsNullOrWhiteSpace(dNITextBox.Text))
+            {
+                MessageBox.Show("No se permite guardar con un DNI vacio.", "ERROR", MessageBoxButtons.OK);
+            }
+            else
+            {
+                alumnos.InsertarAlumno(dNITextBox.Text, apellidosTextBox.Text, nombreTextBox.Text, fechaNacimientoTextBox.Text, domicilioTextBox.Text, codigoPostalTextBox.Text, telefonoTextBox.Text, e_mailTextBox.Text, fechaTituloTextBox.Text, nombreTituloTextBox.Text, centroAcademicoTextBox.Text);
+                MessageBox.Show("Alumno insertado con exito. Reinicie la ventana alumno para poder ver el alumno nuevo insertado.", "CORRECTO", MessageBoxButtons.OK);
+                dNITextBox.Clear();
+                apellidosTextBox.Clear();
+                nombreTituloTextBox.Clear();
+                fechaTituloTextBox.Clear();
+                domicilioTextBox.Clear();
+                codigoPostalTextBox.Clear();
+                telefonoTextBox.Clear();
+                e_mailTextBox.Clear();
+                fechaTituloTextBox.Clear();
+                nombreTituloTextBox.Clear();
+                centroAcademicoTextBox.Clear();
+            }
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            RelaccionesxsdTableAdapters.AlumnosTableAdapter alumnos = new RelaccionesxsdTableAdapters.AlumnosTableAdapter();
+            alumnos.InsertarAlumno(dNITextBox.Text, apellidosTextBox.Text, nombreTextBox.Text, fechaNacimientoTextBox.Text, domicilioTextBox.Text, codigoPostalTextBox.Text, telefonoTextBox.Text, e_mailTextBox.Text, fechaTituloTextBox.Text, nombreTituloTextBox.Text, centroAcademicoTextBox.Text);
         }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
@@ -47,7 +74,7 @@ namespace GestionUniversisdad
             else
             {
                 alumnos.InsertarAlumno(dNITextBox.Text, apellidosTextBox.Text, nombreTextBox.Text, fechaNacimientoTextBox.Text, domicilioTextBox.Text, codigoPostalTextBox.Text, telefonoTextBox.Text, e_mailTextBox.Text, fechaTituloTextBox.Text, nombreTituloTextBox.Text, centroAcademicoTextBox.Text);
-                MessageBox.Show("Alumno insertado con exito.", "CORRECTO", MessageBoxButtons.OK);
+                MessageBox.Show("Alumno insertado con exito", "CORRECTO", MessageBoxButtons.OK);
                 dNITextBox.Clear();
                 apellidosTextBox.Clear();
                 nombreTituloTextBox.Clear();
@@ -59,9 +86,6 @@ namespace GestionUniversisdad
                 fechaTituloTextBox.Clear();
                 nombreTituloTextBox.Clear();
                 centroAcademicoTextBox.Clear();
-                nombreTextBox.Clear();
-                fechaNacimientoTextBox.Clear();
-                this.tableAdapterManager.UpdateAll(this.relaccionesxsd);
             }
         }
 
@@ -87,34 +111,73 @@ namespace GestionUniversisdad
                 fechaTituloTextBox.Clear();
                 nombreTituloTextBox.Clear();
                 centroAcademicoTextBox.Clear();
-                nombreTextBox.Clear();
-                fechaNacimientoTextBox.Clear();
-                actualizar();
             }
         }
 
-        private void toolStripLabel5_Click(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            dNITextBox.Clear();
-            apellidosTextBox.Clear();
-            nombreTituloTextBox.Clear();
-            fechaTituloTextBox.Clear();
-            domicilioTextBox.Clear();
-            codigoPostalTextBox.Clear();
-            telefonoTextBox.Clear();
-            e_mailTextBox.Clear();
-            fechaTituloTextBox.Clear();
-            nombreTituloTextBox.Clear();
-            centroAcademicoTextBox.Clear();
-            nombreTextBox.Clear();
-            fechaNacimientoTextBox.Clear();
+            DataTable alumnos2 = new DataTable();
+            RelaccionesxsdTableAdapters.AlumnosTableAdapter alumnos = new RelaccionesxsdTableAdapters.AlumnosTableAdapter();
+            alumnos2 = alumnos.BuscarDNI(tbBuscar.Text);
+            alumnosDataGridView.DataSource = alumnos2;
         }
 
-        public void actualizar()
+        private void alumnosBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
-            this.Validate();
-            this.alumnosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.relaccionesxsd);
+            RelaccionesxsdTableAdapters.AlumnosTableAdapter alumnos = new RelaccionesxsdTableAdapters.AlumnosTableAdapter();
+            if (string.IsNullOrEmpty(dNITextBox.Text) || string.IsNullOrWhiteSpace(dNITextBox.Text))
+            {
+                MessageBox.Show("No se permite guardar con un DNI vacio.", "ERROR", MessageBoxButtons.OK);
+            }
+            else
+            {
+                alumnos.InsertarAlumno(dNITextBox.Text, apellidosTextBox.Text, nombreTextBox.Text, fechaNacimientoTextBox.Text, domicilioTextBox.Text, codigoPostalTextBox.Text, telefonoTextBox.Text, e_mailTextBox.Text, fechaTituloTextBox.Text, nombreTituloTextBox.Text, centroAcademicoTextBox.Text);
+                MessageBox.Show("Alumno insertado con exito. Reinicie la ventana alumno para poder ver el alumno nuevo insertado.", "CORRECTO", MessageBoxButtons.OK);
+                dNITextBox.Clear();
+                apellidosTextBox.Clear();
+                nombreTituloTextBox.Clear();
+                fechaTituloTextBox.Clear();
+                domicilioTextBox.Clear();
+                codigoPostalTextBox.Clear();
+                telefonoTextBox.Clear();
+                e_mailTextBox.Clear();
+                fechaTituloTextBox.Clear();
+                nombreTituloTextBox.Clear();
+                centroAcademicoTextBox.Clear();
+            }
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            RelaccionesxsdTableAdapters.AlumnosTableAdapter alumnos = new RelaccionesxsdTableAdapters.AlumnosTableAdapter();
+            if (string.IsNullOrEmpty(dNITextBox.Text) || string.IsNullOrWhiteSpace(dNITextBox.Text))
+            {
+                MessageBox.Show("No se permite borrar con un DNI vacio.", "ERROR", MessageBoxButtons.OK);
+            }
+            else
+            {
+                alumnos.BorrarAlumno(dNITextBox.Text);
+                MessageBox.Show("Alumno borrado correctamente.", "CORRECTO", MessageBoxButtons.OK);
+                dNITextBox.Clear();
+                apellidosTextBox.Clear();
+                nombreTituloTextBox.Clear();
+                fechaTituloTextBox.Clear();
+                domicilioTextBox.Clear();
+                codigoPostalTextBox.Clear();
+                telefonoTextBox.Clear();
+                e_mailTextBox.Clear();
+                fechaTituloTextBox.Clear();
+                nombreTituloTextBox.Clear();
+                centroAcademicoTextBox.Clear();
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            RelaccionesxsdTableAdapters.AlumnosTableAdapter nomina = new RelaccionesxsdTableAdapters.AlumnosTableAdapter();
+            String b = tbBuscar.Text;
+            nomina.Borrar(b);
+            this.alumnosTableAdapter.Fill(this.relaccionesxsd.Alumnos);
         }
     }
 }

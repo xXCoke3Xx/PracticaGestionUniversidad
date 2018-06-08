@@ -31,5 +31,28 @@ namespace GestionUniversisdad
             this.facultadesTableAdapter.Fill(this.relaccionesxsd.Facultades);
 
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            RelaccionesxsdTableAdapters.FacultadesTableAdapter facultad = new RelaccionesxsdTableAdapters.FacultadesTableAdapter();
+            if (string.IsNullOrEmpty(tbBuscar.Text) || string.IsNullOrWhiteSpace(tbBuscar.Text))
+            {
+                MessageBox.Show("No se ha podido buscar, no se puede dejar el campo vacio.", "ERROR", MessageBoxButtons.OK);
+            }
+            else
+            {
+                DataTable facultad2 = new DataTable();
+                facultad2 = facultad.BuscarCodigoFacultad(tbBuscar.Text);
+                facultadesDataGridView.DataSource = facultad2;
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            RelaccionesxsdTableAdapters.FacultadesTableAdapter nomina = new RelaccionesxsdTableAdapters.FacultadesTableAdapter();
+            String b = tbBuscar.Text;
+            nomina.Borrar(b);
+            this.facultadesTableAdapter.Fill(this.relaccionesxsd.Facultades);
+        }
     }
 }

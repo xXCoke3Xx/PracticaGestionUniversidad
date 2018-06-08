@@ -25,8 +25,8 @@ namespace GestionUniversisdad
 
         private void asignaturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Facultades fAsignaturas = new Form_Facultades();
-            fAsignaturas.Show();
+            Form_Facultades fFacultades = new Form_Facultades();
+            fFacultades.Show();
         }
 
         private void itemSalir_Click(object sender, EventArgs e)

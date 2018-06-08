@@ -10,9 +10,16 @@
     }
 }
 
-namespace GestionUniversisdad.RelaccionesxsdTableAdapters {
-    
-    
+namespace GestionUniversisdad.RelaccionesxsdTableAdapters
+{
+    partial class NominaTableAdapter
+    {
+    }
+
+    partial class CursosTableAdapter
+    {
+    }
+
     public partial class AlumnosTableAdapter {
     }
 }

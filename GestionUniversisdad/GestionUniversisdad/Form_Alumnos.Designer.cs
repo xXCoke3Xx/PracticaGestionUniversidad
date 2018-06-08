@@ -46,7 +46,6 @@
             this.alumnosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.relaccionesxsd = new GestionUniversisdad.Relaccionesxsd();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -56,9 +55,8 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.alumnosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tbBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.alumnosDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,8 +82,7 @@
             this.centroAcademicoTextBox = new System.Windows.Forms.TextBox();
             this.alumnosTableAdapter = new GestionUniversisdad.RelaccionesxsdTableAdapters.AlumnosTableAdapter();
             this.tableAdapterManager = new GestionUniversisdad.RelaccionesxsdTableAdapters.TableAdapterManager();
-            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             dNILabel = new System.Windows.Forms.Label();
             apellidosLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
@@ -219,7 +216,7 @@
             this.alumnosBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.alumnosBindingNavigator.BindingSource = this.alumnosBindingSource;
             this.alumnosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.alumnosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.alumnosBindingNavigator.DeleteItem = null;
             this.alumnosBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.alumnosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -232,13 +229,10 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
             this.alumnosBindingNavigatorSaveItem,
-            this.toolStripLabel4,
-            this.toolStripLabel1,
-            this.toolStripLabel2,
-            this.toolStripLabel3,
-            this.toolStripLabel5});
+            this.toolStripButton1,
+            this.tbBuscar,
+            this.toolStripButton2});
             this.alumnosBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.alumnosBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.alumnosBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -252,12 +246,12 @@
             // 
             // bindingNavigatorAddNewItem
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(50, 24);
+            this.bindingNavigatorAddNewItem.Text = "NUEVO";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // alumnosBindingSource
@@ -276,15 +270,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -348,31 +333,29 @@
             // 
             // alumnosBindingNavigatorSaveItem
             // 
-            this.alumnosBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.alumnosBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.alumnosBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("alumnosBindingNavigatorSaveItem.Image")));
             this.alumnosBindingNavigatorSaveItem.Name = "alumnosBindingNavigatorSaveItem";
-            this.alumnosBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
-            this.alumnosBindingNavigatorSaveItem.Text = "Guardar datos";
+            this.alumnosBindingNavigatorSaveItem.Size = new System.Drawing.Size(65, 24);
+            this.alumnosBindingNavigatorSaveItem.Text = "GUARDAR";
+            this.alumnosBindingNavigatorSaveItem.Click += new System.EventHandler(this.alumnosBindingNavigatorSaveItem_Click_1);
             // 
-            // toolStripLabel1
+            // toolStripButton1
             // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(61, 24);
-            this.toolStripLabel1.Text = "GUARDAR";
-            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
+            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(55, 24);
+            this.toolStripButton1.Text = "BUSCAR";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // toolStripLabel2
+            // tbBuscar
             // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(70, 24);
-            this.toolStripLabel2.Text = "MODIFICAR";
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(52, 24);
-            this.toolStripLabel3.Text = "BORRAR";
-            this.toolStripLabel3.Click += new System.EventHandler(this.toolStripLabel3_Click);
+            this.tbBuscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(100, 27);
             // 
             // alumnosDataGridView
             // 
@@ -392,7 +375,7 @@
             this.dataGridViewTextBoxColumn11});
             this.alumnosDataGridView.DataSource = this.alumnosBindingSource;
             this.alumnosDataGridView.Location = new System.Drawing.Point(28, 294);
-            this.alumnosDataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.alumnosDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.alumnosDataGridView.Name = "alumnosDataGridView";
             this.alumnosDataGridView.RowTemplate.Height = 24;
             this.alumnosDataGridView.Size = new System.Drawing.Size(859, 267);
@@ -468,7 +451,7 @@
             // 
             this.dNITextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "DNI", true));
             this.dNITextBox.Location = new System.Drawing.Point(472, 27);
-            this.dNITextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.dNITextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dNITextBox.Name = "dNITextBox";
             this.dNITextBox.Size = new System.Drawing.Size(76, 20);
             this.dNITextBox.TabIndex = 3;
@@ -477,7 +460,7 @@
             // 
             this.apellidosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "apellidos", true));
             this.apellidosTextBox.Location = new System.Drawing.Point(472, 50);
-            this.apellidosTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.apellidosTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.apellidosTextBox.Name = "apellidosTextBox";
             this.apellidosTextBox.Size = new System.Drawing.Size(76, 20);
             this.apellidosTextBox.TabIndex = 5;
@@ -486,7 +469,7 @@
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "nombre", true));
             this.nombreTextBox.Location = new System.Drawing.Point(472, 72);
-            this.nombreTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.nombreTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(76, 20);
             this.nombreTextBox.TabIndex = 7;
@@ -495,7 +478,7 @@
             // 
             this.fechaNacimientoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "fechaNacimiento", true));
             this.fechaNacimientoTextBox.Location = new System.Drawing.Point(472, 95);
-            this.fechaNacimientoTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.fechaNacimientoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.fechaNacimientoTextBox.Name = "fechaNacimientoTextBox";
             this.fechaNacimientoTextBox.Size = new System.Drawing.Size(76, 20);
             this.fechaNacimientoTextBox.TabIndex = 9;
@@ -504,7 +487,7 @@
             // 
             this.domicilioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "domicilio", true));
             this.domicilioTextBox.Location = new System.Drawing.Point(472, 118);
-            this.domicilioTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.domicilioTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.domicilioTextBox.Name = "domicilioTextBox";
             this.domicilioTextBox.Size = new System.Drawing.Size(76, 20);
             this.domicilioTextBox.TabIndex = 11;
@@ -513,7 +496,7 @@
             // 
             this.codigoPostalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "codigoPostal", true));
             this.codigoPostalTextBox.Location = new System.Drawing.Point(472, 141);
-            this.codigoPostalTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.codigoPostalTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.codigoPostalTextBox.Name = "codigoPostalTextBox";
             this.codigoPostalTextBox.Size = new System.Drawing.Size(76, 20);
             this.codigoPostalTextBox.TabIndex = 13;
@@ -522,7 +505,7 @@
             // 
             this.telefonoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "telefono", true));
             this.telefonoTextBox.Location = new System.Drawing.Point(472, 163);
-            this.telefonoTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.telefonoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.telefonoTextBox.Name = "telefonoTextBox";
             this.telefonoTextBox.Size = new System.Drawing.Size(76, 20);
             this.telefonoTextBox.TabIndex = 15;
@@ -531,7 +514,7 @@
             // 
             this.e_mailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "e-mail", true));
             this.e_mailTextBox.Location = new System.Drawing.Point(472, 186);
-            this.e_mailTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.e_mailTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.e_mailTextBox.Name = "e_mailTextBox";
             this.e_mailTextBox.Size = new System.Drawing.Size(76, 20);
             this.e_mailTextBox.TabIndex = 17;
@@ -540,7 +523,7 @@
             // 
             this.fechaTituloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "fechaTitulo", true));
             this.fechaTituloTextBox.Location = new System.Drawing.Point(472, 209);
-            this.fechaTituloTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.fechaTituloTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.fechaTituloTextBox.Name = "fechaTituloTextBox";
             this.fechaTituloTextBox.Size = new System.Drawing.Size(76, 20);
             this.fechaTituloTextBox.TabIndex = 19;
@@ -549,7 +532,7 @@
             // 
             this.nombreTituloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "nombreTitulo", true));
             this.nombreTituloTextBox.Location = new System.Drawing.Point(472, 232);
-            this.nombreTituloTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.nombreTituloTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nombreTituloTextBox.Name = "nombreTituloTextBox";
             this.nombreTituloTextBox.Size = new System.Drawing.Size(76, 20);
             this.nombreTituloTextBox.TabIndex = 21;
@@ -558,7 +541,7 @@
             // 
             this.centroAcademicoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnosBindingSource, "centroAcademico", true));
             this.centroAcademicoTextBox.Location = new System.Drawing.Point(472, 254);
-            this.centroAcademicoTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.centroAcademicoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.centroAcademicoTextBox.Name = "centroAcademicoTextBox";
             this.centroAcademicoTextBox.Size = new System.Drawing.Size(76, 20);
             this.centroAcademicoTextBox.TabIndex = 23;
@@ -579,19 +562,16 @@
             this.tableAdapterManager.ProfesoresTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = GestionUniversisdad.RelaccionesxsdTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // toolStripLabel4
+            // toolStripButton2
             // 
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(46, 24);
-            this.toolStripLabel4.Text = "NUEVO";
-            // 
-            // toolStripLabel5
-            // 
-            this.toolStripLabel5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(52, 24);
-            this.toolStripLabel5.Text = "LIMPIAR";
-            this.toolStripLabel5.Click += new System.EventHandler(this.toolStripLabel5_Click);
+            this.toolStripButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(56, 24);
+            this.toolStripButton2.Text = "BORRAR";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // Form_Alumnos
             // 
@@ -622,9 +602,9 @@
             this.Controls.Add(this.centroAcademicoTextBox);
             this.Controls.Add(this.alumnosDataGridView);
             this.Controls.Add(this.alumnosBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form_Alumnos";
-            this.Text = "Form_Alumnos";
+            this.Text = " Alumnos";
             this.Load += new System.EventHandler(this.Form_Alumnos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.alumnosBindingNavigator)).EndInit();
             this.alumnosBindingNavigator.ResumeLayout(false);
@@ -646,7 +626,6 @@
         private System.Windows.Forms.BindingNavigator alumnosBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -679,10 +658,8 @@
         private System.Windows.Forms.TextBox fechaTituloTextBox;
         private System.Windows.Forms.TextBox nombreTituloTextBox;
         private System.Windows.Forms.TextBox centroAcademicoTextBox;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel5;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripTextBox tbBuscar;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

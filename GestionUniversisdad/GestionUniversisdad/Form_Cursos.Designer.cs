@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Cursos));
             System.Windows.Forms.Label idCursoLabel;
             System.Windows.Forms.Label escuelaLabel;
             System.Windows.Forms.Label nombreCursoLabel;
@@ -37,10 +36,12 @@
             System.Windows.Forms.Label fechaTerminacionLabel;
             System.Windows.Forms.Label numHorasLabel;
             System.Windows.Forms.Label calendarioLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Cursos));
             this.cursosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.cursosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.relaccionesxsd = new GestionUniversisdad.Relaccionesxsd();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -50,17 +51,9 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cursosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tbBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.cursosDataGridView = new System.Windows.Forms.DataGridView();
-            this.idCursoTextBox = new System.Windows.Forms.TextBox();
-            this.escuelaTextBox = new System.Windows.Forms.TextBox();
-            this.nombreCursoTextBox = new System.Windows.Forms.TextBox();
-            this.fechaComienzoTextBox = new System.Windows.Forms.TextBox();
-            this.fechaTerminacionTextBox = new System.Windows.Forms.TextBox();
-            this.numHorasTextBox = new System.Windows.Forms.TextBox();
-            this.calendarioTextBox = new System.Windows.Forms.TextBox();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.cursosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.relaccionesxsd = new GestionUniversisdad.Relaccionesxsd();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,8 +61,16 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCursoTextBox = new System.Windows.Forms.TextBox();
+            this.escuelaTextBox = new System.Windows.Forms.TextBox();
+            this.nombreCursoTextBox = new System.Windows.Forms.TextBox();
+            this.fechaComienzoTextBox = new System.Windows.Forms.TextBox();
+            this.fechaTerminacionTextBox = new System.Windows.Forms.TextBox();
+            this.numHorasTextBox = new System.Windows.Forms.TextBox();
+            this.calendarioTextBox = new System.Windows.Forms.TextBox();
             this.cursosTableAdapter = new GestionUniversisdad.RelaccionesxsdTableAdapters.CursosTableAdapter();
             this.tableAdapterManager = new GestionUniversisdad.RelaccionesxsdTableAdapters.TableAdapterManager();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             idCursoLabel = new System.Windows.Forms.Label();
             escuelaLabel = new System.Windows.Forms.Label();
             nombreCursoLabel = new System.Windows.Forms.Label();
@@ -79,17 +80,87 @@
             calendarioLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cursosBindingNavigator)).BeginInit();
             this.cursosBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cursosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.relaccionesxsd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursosDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // idCursoLabel
+            // 
+            idCursoLabel.AutoSize = true;
+            idCursoLabel.Location = new System.Drawing.Point(487, 90);
+            idCursoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            idCursoLabel.Name = "idCursoLabel";
+            idCursoLabel.Size = new System.Drawing.Size(48, 13);
+            idCursoLabel.TabIndex = 2;
+            idCursoLabel.Text = "id Curso:";
+            // 
+            // escuelaLabel
+            // 
+            escuelaLabel.AutoSize = true;
+            escuelaLabel.Location = new System.Drawing.Point(487, 113);
+            escuelaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            escuelaLabel.Name = "escuelaLabel";
+            escuelaLabel.Size = new System.Drawing.Size(47, 13);
+            escuelaLabel.TabIndex = 4;
+            escuelaLabel.Text = "escuela:";
+            // 
+            // nombreCursoLabel
+            // 
+            nombreCursoLabel.AutoSize = true;
+            nombreCursoLabel.Location = new System.Drawing.Point(487, 136);
+            nombreCursoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            nombreCursoLabel.Name = "nombreCursoLabel";
+            nombreCursoLabel.Size = new System.Drawing.Size(75, 13);
+            nombreCursoLabel.TabIndex = 6;
+            nombreCursoLabel.Text = "nombre Curso:";
+            // 
+            // fechaComienzoLabel
+            // 
+            fechaComienzoLabel.AutoSize = true;
+            fechaComienzoLabel.Location = new System.Drawing.Point(487, 158);
+            fechaComienzoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            fechaComienzoLabel.Name = "fechaComienzoLabel";
+            fechaComienzoLabel.Size = new System.Drawing.Size(86, 13);
+            fechaComienzoLabel.TabIndex = 8;
+            fechaComienzoLabel.Text = "fecha Comienzo:";
+            // 
+            // fechaTerminacionLabel
+            // 
+            fechaTerminacionLabel.AutoSize = true;
+            fechaTerminacionLabel.Location = new System.Drawing.Point(487, 181);
+            fechaTerminacionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            fechaTerminacionLabel.Name = "fechaTerminacionLabel";
+            fechaTerminacionLabel.Size = new System.Drawing.Size(98, 13);
+            fechaTerminacionLabel.TabIndex = 10;
+            fechaTerminacionLabel.Text = "fecha Terminacion:";
+            // 
+            // numHorasLabel
+            // 
+            numHorasLabel.AutoSize = true;
+            numHorasLabel.Location = new System.Drawing.Point(487, 204);
+            numHorasLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            numHorasLabel.Name = "numHorasLabel";
+            numHorasLabel.Size = new System.Drawing.Size(61, 13);
+            numHorasLabel.TabIndex = 12;
+            numHorasLabel.Text = "num Horas:";
+            // 
+            // calendarioLabel
+            // 
+            calendarioLabel.AutoSize = true;
+            calendarioLabel.Location = new System.Drawing.Point(487, 227);
+            calendarioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            calendarioLabel.Name = "calendarioLabel";
+            calendarioLabel.Size = new System.Drawing.Size(59, 13);
+            calendarioLabel.TabIndex = 14;
+            calendarioLabel.Text = "calendario:";
             // 
             // cursosBindingNavigator
             // 
             this.cursosBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.cursosBindingNavigator.BindingSource = this.cursosBindingSource;
             this.cursosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.cursosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.cursosBindingNavigator.DeleteItem = null;
             this.cursosBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cursosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -102,9 +173,10 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
             this.cursosBindingNavigatorSaveItem,
-            this.toolStripLabel1});
+            this.toolStripButton1,
+            this.tbBuscar,
+            this.toolStripButton2});
             this.cursosBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.cursosBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.cursosBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -112,34 +184,35 @@
             this.cursosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.cursosBindingNavigator.Name = "cursosBindingNavigator";
             this.cursosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.cursosBindingNavigator.Size = new System.Drawing.Size(1352, 27);
+            this.cursosBindingNavigator.Size = new System.Drawing.Size(1014, 27);
             this.cursosBindingNavigator.TabIndex = 0;
             this.cursosBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(50, 24);
+            this.bindingNavigatorAddNewItem.Text = "NUEVO";
+            // 
+            // cursosBindingSource
+            // 
+            this.cursosBindingSource.DataMember = "Cursos";
+            this.cursosBindingSource.DataSource = this.relaccionesxsd;
+            // 
+            // relaccionesxsd
+            // 
+            this.relaccionesxsd.DataSetName = "Relaccionesxsd";
+            this.relaccionesxsd.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 24);
-            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -169,7 +242,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
@@ -203,12 +276,29 @@
             // 
             // cursosBindingNavigatorSaveItem
             // 
-            this.cursosBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.cursosBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.cursosBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("cursosBindingNavigatorSaveItem.Image")));
             this.cursosBindingNavigatorSaveItem.Name = "cursosBindingNavigatorSaveItem";
-            this.cursosBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
-            this.cursosBindingNavigatorSaveItem.Text = "Guardar datos";
+            this.cursosBindingNavigatorSaveItem.Size = new System.Drawing.Size(65, 24);
+            this.cursosBindingNavigatorSaveItem.Text = "GUARDAR";
             this.cursosBindingNavigatorSaveItem.Click += new System.EventHandler(this.cursosBindingNavigatorSaveItem_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(55, 24);
+            this.toolStripButton1.Text = "BUSCAR";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // tbBuscar
+            // 
+            this.tbBuscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(76, 27);
             // 
             // cursosDataGridView
             // 
@@ -223,147 +313,12 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.cursosDataGridView.DataSource = this.cursosBindingSource;
-            this.cursosDataGridView.Location = new System.Drawing.Point(12, 446);
+            this.cursosDataGridView.Location = new System.Drawing.Point(9, 362);
+            this.cursosDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cursosDataGridView.Name = "cursosDataGridView";
             this.cursosDataGridView.RowTemplate.Height = 24;
-            this.cursosDataGridView.Size = new System.Drawing.Size(1320, 329);
+            this.cursosDataGridView.Size = new System.Drawing.Size(990, 267);
             this.cursosDataGridView.TabIndex = 1;
-            // 
-            // idCursoLabel
-            // 
-            idCursoLabel.AutoSize = true;
-            idCursoLabel.Location = new System.Drawing.Point(649, 111);
-            idCursoLabel.Name = "idCursoLabel";
-            idCursoLabel.Size = new System.Drawing.Size(64, 17);
-            idCursoLabel.TabIndex = 2;
-            idCursoLabel.Text = "id Curso:";
-            // 
-            // idCursoTextBox
-            // 
-            this.idCursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursosBindingSource, "idCurso", true));
-            this.idCursoTextBox.Location = new System.Drawing.Point(784, 108);
-            this.idCursoTextBox.Name = "idCursoTextBox";
-            this.idCursoTextBox.Size = new System.Drawing.Size(100, 22);
-            this.idCursoTextBox.TabIndex = 3;
-            // 
-            // escuelaLabel
-            // 
-            escuelaLabel.AutoSize = true;
-            escuelaLabel.Location = new System.Drawing.Point(649, 139);
-            escuelaLabel.Name = "escuelaLabel";
-            escuelaLabel.Size = new System.Drawing.Size(61, 17);
-            escuelaLabel.TabIndex = 4;
-            escuelaLabel.Text = "escuela:";
-            // 
-            // escuelaTextBox
-            // 
-            this.escuelaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursosBindingSource, "escuela", true));
-            this.escuelaTextBox.Location = new System.Drawing.Point(784, 136);
-            this.escuelaTextBox.Name = "escuelaTextBox";
-            this.escuelaTextBox.Size = new System.Drawing.Size(100, 22);
-            this.escuelaTextBox.TabIndex = 5;
-            // 
-            // nombreCursoLabel
-            // 
-            nombreCursoLabel.AutoSize = true;
-            nombreCursoLabel.Location = new System.Drawing.Point(649, 167);
-            nombreCursoLabel.Name = "nombreCursoLabel";
-            nombreCursoLabel.Size = new System.Drawing.Size(101, 17);
-            nombreCursoLabel.TabIndex = 6;
-            nombreCursoLabel.Text = "nombre Curso:";
-            // 
-            // nombreCursoTextBox
-            // 
-            this.nombreCursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursosBindingSource, "nombreCurso", true));
-            this.nombreCursoTextBox.Location = new System.Drawing.Point(784, 164);
-            this.nombreCursoTextBox.Name = "nombreCursoTextBox";
-            this.nombreCursoTextBox.Size = new System.Drawing.Size(100, 22);
-            this.nombreCursoTextBox.TabIndex = 7;
-            // 
-            // fechaComienzoLabel
-            // 
-            fechaComienzoLabel.AutoSize = true;
-            fechaComienzoLabel.Location = new System.Drawing.Point(649, 195);
-            fechaComienzoLabel.Name = "fechaComienzoLabel";
-            fechaComienzoLabel.Size = new System.Drawing.Size(113, 17);
-            fechaComienzoLabel.TabIndex = 8;
-            fechaComienzoLabel.Text = "fecha Comienzo:";
-            // 
-            // fechaComienzoTextBox
-            // 
-            this.fechaComienzoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursosBindingSource, "fechaComienzo", true));
-            this.fechaComienzoTextBox.Location = new System.Drawing.Point(784, 192);
-            this.fechaComienzoTextBox.Name = "fechaComienzoTextBox";
-            this.fechaComienzoTextBox.Size = new System.Drawing.Size(100, 22);
-            this.fechaComienzoTextBox.TabIndex = 9;
-            // 
-            // fechaTerminacionLabel
-            // 
-            fechaTerminacionLabel.AutoSize = true;
-            fechaTerminacionLabel.Location = new System.Drawing.Point(649, 223);
-            fechaTerminacionLabel.Name = "fechaTerminacionLabel";
-            fechaTerminacionLabel.Size = new System.Drawing.Size(129, 17);
-            fechaTerminacionLabel.TabIndex = 10;
-            fechaTerminacionLabel.Text = "fecha Terminacion:";
-            // 
-            // fechaTerminacionTextBox
-            // 
-            this.fechaTerminacionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursosBindingSource, "fechaTerminacion", true));
-            this.fechaTerminacionTextBox.Location = new System.Drawing.Point(784, 220);
-            this.fechaTerminacionTextBox.Name = "fechaTerminacionTextBox";
-            this.fechaTerminacionTextBox.Size = new System.Drawing.Size(100, 22);
-            this.fechaTerminacionTextBox.TabIndex = 11;
-            // 
-            // numHorasLabel
-            // 
-            numHorasLabel.AutoSize = true;
-            numHorasLabel.Location = new System.Drawing.Point(649, 251);
-            numHorasLabel.Name = "numHorasLabel";
-            numHorasLabel.Size = new System.Drawing.Size(81, 17);
-            numHorasLabel.TabIndex = 12;
-            numHorasLabel.Text = "num Horas:";
-            // 
-            // numHorasTextBox
-            // 
-            this.numHorasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursosBindingSource, "numHoras", true));
-            this.numHorasTextBox.Location = new System.Drawing.Point(784, 248);
-            this.numHorasTextBox.Name = "numHorasTextBox";
-            this.numHorasTextBox.Size = new System.Drawing.Size(100, 22);
-            this.numHorasTextBox.TabIndex = 13;
-            // 
-            // calendarioLabel
-            // 
-            calendarioLabel.AutoSize = true;
-            calendarioLabel.Location = new System.Drawing.Point(649, 279);
-            calendarioLabel.Name = "calendarioLabel";
-            calendarioLabel.Size = new System.Drawing.Size(78, 17);
-            calendarioLabel.TabIndex = 14;
-            calendarioLabel.Text = "calendario:";
-            // 
-            // calendarioTextBox
-            // 
-            this.calendarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursosBindingSource, "calendario", true));
-            this.calendarioTextBox.Location = new System.Drawing.Point(784, 276);
-            this.calendarioTextBox.Name = "calendarioTextBox";
-            this.calendarioTextBox.Size = new System.Drawing.Size(100, 22);
-            this.calendarioTextBox.TabIndex = 15;
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(78, 24);
-            this.toolStripLabel1.Text = "GUARDAR";
-            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
-            // 
-            // cursosBindingSource
-            // 
-            this.cursosBindingSource.DataMember = "Cursos";
-            this.cursosBindingSource.DataSource = this.relaccionesxsd;
-            // 
-            // relaccionesxsd
-            // 
-            this.relaccionesxsd.DataSetName = "Relaccionesxsd";
-            this.relaccionesxsd.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -407,6 +362,69 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "calendario";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
+            // idCursoTextBox
+            // 
+            this.idCursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursosBindingSource, "idCurso", true));
+            this.idCursoTextBox.Location = new System.Drawing.Point(588, 88);
+            this.idCursoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.idCursoTextBox.Name = "idCursoTextBox";
+            this.idCursoTextBox.Size = new System.Drawing.Size(76, 20);
+            this.idCursoTextBox.TabIndex = 3;
+            // 
+            // escuelaTextBox
+            // 
+            this.escuelaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursosBindingSource, "escuela", true));
+            this.escuelaTextBox.Location = new System.Drawing.Point(588, 110);
+            this.escuelaTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.escuelaTextBox.Name = "escuelaTextBox";
+            this.escuelaTextBox.Size = new System.Drawing.Size(76, 20);
+            this.escuelaTextBox.TabIndex = 5;
+            // 
+            // nombreCursoTextBox
+            // 
+            this.nombreCursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursosBindingSource, "nombreCurso", true));
+            this.nombreCursoTextBox.Location = new System.Drawing.Point(588, 133);
+            this.nombreCursoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nombreCursoTextBox.Name = "nombreCursoTextBox";
+            this.nombreCursoTextBox.Size = new System.Drawing.Size(76, 20);
+            this.nombreCursoTextBox.TabIndex = 7;
+            // 
+            // fechaComienzoTextBox
+            // 
+            this.fechaComienzoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursosBindingSource, "fechaComienzo", true));
+            this.fechaComienzoTextBox.Location = new System.Drawing.Point(588, 156);
+            this.fechaComienzoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechaComienzoTextBox.Name = "fechaComienzoTextBox";
+            this.fechaComienzoTextBox.Size = new System.Drawing.Size(76, 20);
+            this.fechaComienzoTextBox.TabIndex = 9;
+            // 
+            // fechaTerminacionTextBox
+            // 
+            this.fechaTerminacionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursosBindingSource, "fechaTerminacion", true));
+            this.fechaTerminacionTextBox.Location = new System.Drawing.Point(588, 179);
+            this.fechaTerminacionTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechaTerminacionTextBox.Name = "fechaTerminacionTextBox";
+            this.fechaTerminacionTextBox.Size = new System.Drawing.Size(76, 20);
+            this.fechaTerminacionTextBox.TabIndex = 11;
+            // 
+            // numHorasTextBox
+            // 
+            this.numHorasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursosBindingSource, "numHoras", true));
+            this.numHorasTextBox.Location = new System.Drawing.Point(588, 202);
+            this.numHorasTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numHorasTextBox.Name = "numHorasTextBox";
+            this.numHorasTextBox.Size = new System.Drawing.Size(76, 20);
+            this.numHorasTextBox.TabIndex = 13;
+            // 
+            // calendarioTextBox
+            // 
+            this.calendarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursosBindingSource, "calendario", true));
+            this.calendarioTextBox.Location = new System.Drawing.Point(588, 224);
+            this.calendarioTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.calendarioTextBox.Name = "calendarioTextBox";
+            this.calendarioTextBox.Size = new System.Drawing.Size(76, 20);
+            this.calendarioTextBox.TabIndex = 15;
+            // 
             // cursosTableAdapter
             // 
             this.cursosTableAdapter.ClearBeforeFill = true;
@@ -423,11 +441,22 @@
             this.tableAdapterManager.ProfesoresTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = GestionUniversisdad.RelaccionesxsdTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(56, 24);
+            this.toolStripButton2.Text = "BORRAR";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
             // Form_Cursos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1352, 795);
+            this.ClientSize = new System.Drawing.Size(1014, 609);
             this.Controls.Add(idCursoLabel);
             this.Controls.Add(this.idCursoTextBox);
             this.Controls.Add(escuelaLabel);
@@ -444,15 +473,16 @@
             this.Controls.Add(this.calendarioTextBox);
             this.Controls.Add(this.cursosDataGridView);
             this.Controls.Add(this.cursosBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form_Cursos";
             this.Text = "Cursos";
             this.Load += new System.EventHandler(this.Form_Cursos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cursosBindingNavigator)).EndInit();
             this.cursosBindingNavigator.ResumeLayout(false);
             this.cursosBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cursosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.relaccionesxsd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursosDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -467,7 +497,6 @@
         private System.Windows.Forms.BindingNavigator cursosBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -492,6 +521,8 @@
         private System.Windows.Forms.TextBox fechaTerminacionTextBox;
         private System.Windows.Forms.TextBox numHorasTextBox;
         private System.Windows.Forms.TextBox calendarioTextBox;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripTextBox tbBuscar;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

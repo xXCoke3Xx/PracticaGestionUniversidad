@@ -31,5 +31,28 @@ namespace GestionUniversisdad
             this.profesoresTableAdapter.Fill(this.relaccionesxsd.Profesores);
 
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            RelaccionesxsdTableAdapters.ProfesoresTableAdapter profesores = new RelaccionesxsdTableAdapters.ProfesoresTableAdapter();
+            if (string.IsNullOrEmpty(tbBuscar.Text) || string.IsNullOrWhiteSpace(tbBuscar.Text))
+            {
+                MessageBox.Show("No se ha podido buscar, no se puede dejar el campo vacio.", "ERROR", MessageBoxButtons.OK);
+            }
+            else
+            {
+                DataTable profesores2 = new DataTable();
+                profesores2 = profesores.BuscarDNI(tbBuscar.Text);
+                profesoresDataGridView.DataSource = profesores2;
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            RelaccionesxsdTableAdapters.ProfesoresTableAdapter profesores = new RelaccionesxsdTableAdapters.ProfesoresTableAdapter();
+            String b = tbBuscar.Text;
+            profesores.Borrar(b);
+            this.profesoresTableAdapter.Fill(this.relaccionesxsd.Profesores);
+        }
     }
 }
